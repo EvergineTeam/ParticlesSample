@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="WaveEngine.DirectX11" Version="3.1.0.6774-particles" />
+    <PackageReference Include="WaveEngine.HLSLEverywhere" Version="3.1.0.6774-particles" />
+    <PackageReference Include="WaveEngine.XAudio2" Version="3.1.0.6774-particles" />
+    <PackageReference Include="WaveEngine.Forms" Version="3.1.0.6774-particles" />
+    <PackageReference Include="WaveEngine.Targets" Version="3.1.0.6774-particles" />
+    <PackageReference Include="WaveEngine.Targets.Windows" Version="3.1.0.6774-particles" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ParticlesSample\ParticlesSample.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="$(DefineConstants.Contains('WAVEENGINE_EDITOR'))">
+    <ProjectReference Include="..\ParticlesSample.Editor\ParticlesSample.Editor.csproj" />
+  </ItemGroup>
+  
+</Project>
