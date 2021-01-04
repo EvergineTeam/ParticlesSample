@@ -1,0 +1,27 @@
+!WaveEngine.Assets.Exporters.ModelMetaFile,WaveEngine.Assets
+Id: c261b249-a31f-4cfb-97c8-63ae4e56a86c
+Clips: []
+DefaultProfile:
+  ExcludeAsset: false
+  Name: null
+  Platform: Undefined
+ExportAnimations: true
+ExportAsRaw: false
+GenerateTangentSpace: true
+Profiles: {}
+Source:
+  Header:
+    Id: cc0df6e4-9002-4279-bc4a-a3aef4ab40b2
+    IsCompressed: true
+  LastModified: 0001-01-01T00:00:00.0000000
+  ModelInfo:
+    Id: aca31f93-d8fd-4d3f-9745-9f9705372910
+    AnimationTracks: []
+    EmbeddedResources: null
+    Materials:
+      - Item1: Stone_low_1
+        Item2: 392d096a-166f-4f8e-852c-f857d6ea0c8c
+    Nodes:
+      - RootNode
+      - LeopardStone
+SwapWindingOrder: false
