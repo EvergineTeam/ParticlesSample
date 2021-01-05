@@ -1,0 +1,28 @@
+!WaveEngine.Assets.Exporters.ModelMetaFile,WaveEngine.Assets
+Id: 48054351-1276-47cd-a2ae-5c6daf8eab18
+Clips: []
+DefaultProfile:
+  ExcludeAsset: false
+  Name: null
+  Platform: Undefined
+ExportAnimations: true
+ExportAsRaw: false
+GenerateTangentSpace: true
+Profiles: {}
+Source:
+  Header:
+    Id: 1a03ecef-c087-4a2a-abff-e045650a1f69
+    IsCompressed: true
+  LastModified: 0001-01-01T00:00:00.0000000
+  ModelInfo:
+    Id: e89b3ed5-b461-4724-b5ca-563065e96b3c
+    AnimationTracks: []
+    EmbeddedResources: null
+    Materials:
+      - Item1: fan material
+        Item2: 00000000-0000-0000-0000-000000000000
+    Nodes:
+      - RootNode
+      - RootNode.eletric fan
+      - RootNode.eletric fan_001
+SwapWindingOrder: false

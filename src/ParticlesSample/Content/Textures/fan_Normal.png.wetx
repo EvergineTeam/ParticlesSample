@@ -1,5 +1,5 @@
 !WaveEngine.Assets.Exporters.TextureMetaFile,WaveEngine.Assets
-Id: a962eaeb-9bdb-4c4b-9084-6fa40f8dfb19
+Id: da2247c7-9a81-4263-bb0b-2e29634fa366
 DefaultProfile:
   ExcludeAsset: false
   ExportedItem: null
@@ -15,14 +15,14 @@ GenerateMipMaps: true
 NinePatchType: None
 PremultipliedAlpha: true
 Profiles: {}
-SamplerID: 9018edf8-ea96-4721-bf83-5561942432e0
+SamplerID: 00000000-0000-0000-0000-000000000000
 Source:
   Header:
-    Id: c99956ea-ebb2-4a59-ac8c-824a69edc258
+    Id: 36614f04-c6c8-4209-8164-d5df83495d98
     IsCompressed: true
   LastModified: 0001-01-01T00:00:00.0000000
   TextureInfo:
-    Id: c645a9d5-9fe5-4978-a01f-471f97900b20
+    Id: e359b952-141b-49bf-9fb6-9d519daec211
     Description:
       ArraySize: 1
       CpuAccess: None
