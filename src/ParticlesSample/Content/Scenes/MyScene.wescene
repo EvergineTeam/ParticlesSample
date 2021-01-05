@@ -27,14 +27,14 @@ Items:
         IsEnabled: true
         MaxPitch: 1.49225616
         MouseSensibility: 0.0299999993
-        Speed: 5.0
+        Speed: 1.0
         TouchMoveAndOrientationRatio: 0.5
         TouchSensibility: 1.0
         UpdateOrder: 0.5
       - !WaveEngine.Framework.Graphics.Camera3D,WaveEngine.Framework
         Id: 5b10653e-93d2-48e7-884f-a07b2ac173ee
         Aperture: 1.0
-        AspectRatio: 1.81148326
+        AspectRatio: 1.96727276
         AutoExposureEnabled: false
         CameraOrder: 0.0
         ClearDepth: 1.0
@@ -45,7 +45,7 @@ Items:
           MaxDepth: 1.0
           MinDepth: 0.0
         DisplayTag: null
-        DisplayTagDirty: true
+        DisplayTagDirty: false
         Exposure: 1.0
         FarPlane: 1000.0
         FieldOfView: 0.785398185
@@ -65,10 +65,10 @@ Items:
         MinLogLuminance: -10.0
         NearPlane: 0.100000001
         ScreenViewport:
-          Height: 1045.0
+          Height: 275.0
           MaxDepth: 1.0
           MinDepth: 0.0
-          Width: 1893.0
+          Width: 541.0
           X: 0.0
           Y: 0.0
         Sensitivity: 100.0
@@ -6956,50 +6956,6 @@ Items:
         Id: 7c0ef774-4e49-4321-87e0-b75295a33e3a
     Id: 41c006d1-7525-4fc3-afdc-76cfd7bc0087
   - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
-    Name: photometricDirectionalLight
-    Tag: null
-    IsEnabled: false
-    IsStatic: false
-    Components:
-      - !WaveEngine.Framework.Graphics.Transform3D,WaveEngine.Framework
-        Id: b0e83972-2f0e-4d23-8a68-cc0b349db3e1
-        IsEnabled: true
-        LocalOrientation:
-          W: 0.617268741
-          X: -0.539295673
-          Y: -0.544117332
-          Z: 0.179096997
-        LocalPosition:
-          X: 7.54422331
-          Y: 0.703059793
-          Z: -0.922820091
-        LocalScale:
-          X: 1.0
-          Y: 1.0
-          Z: 1.0
-      - !WaveEngine.Framework.Graphics.PhotometricDirectionalLight,WaveEngine.Framework
-        Id: 858d5059-efa3-4a4b-93b7-d4f51eade305
-        Color:
-          A: 255
-          B: 253
-          G: 248
-          R: 255
-        ColorByTemperature: true
-        DepthBias: 0.0
-        Illuminance: 1.0
-        Intensity: 1.0
-        IsEnabled: true
-        IsShadowEnabled: false
-        LinearColor:
-          A: 1.0
-          B: 0.982790232
-          G: 0.943362474
-          R: 1.0
-        ShadowsOpacity: 0.0
-        Temperature: 6500.0
-    Children: []
-    Id: dad4acf0-347f-4d11-bc96-d1edd073aba1
-  - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
     Name: clouds
     Tag: null
     IsEnabled: true
@@ -7059,7 +7015,7 @@ Items:
             Id: 5c348c26-07d2-46d9-8bc4-254076572174
             DistanceRate: 0.0
             IsEnabled: true
-            Rate: 3.0
+            Rate: 2.0
           - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
             Id: 7e4a5eae-cf63-4ac8-9913-aa2f9cd278d8
             ColorAnimated: true
@@ -7106,7 +7062,7 @@ Items:
               G: 44
               R: 42
             InitColorMode: RandomBetweenTwoConstants
-            InitLife: 10.0
+            InitLife: 11.0
             InitLife2: 15.0
             InitLifeMode: RandomBetweenTwoConstants
             InitSize: 1.0
@@ -7131,13 +7087,13 @@ Items:
             RandomPrecission: Medium
             RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
             SimulationSpace: World
-            SizeAnimated: false
-            SizeOverLife1: 0.0
+            SizeAnimated: true
+            SizeOverLife1: 1.0
             SizeOverLife2: 1.0
-            SizeOverLife2Position: 0.200000003
-            SizeOverLife3: 1.0
-            SizeOverLife3Position: 0.800000012
-            SizeOverLife4: 0.0
+            SizeOverLife2Position: 0.0
+            SizeOverLife3: 1.5
+            SizeOverLife3Position: 1.0
+            SizeOverLife4: 2.0
             TimeFactor: 1.0
             UseComputeParticles: true
           - !WaveEngine.Framework.Particles.ParticleSystemRenderer,WaveEngine.Framework
@@ -7148,5 +7104,279 @@ Items:
             OrderBias: 0
         Children: []
         Id: 0b781ff8-04b0-48c8-ba07-d8632121224b
+      - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
+        Name: photometricPointLight
+        Tag: null
+        IsEnabled: true
+        IsStatic: false
+        Components:
+          - !WaveEngine.Framework.Graphics.Transform3D,WaveEngine.Framework
+            Id: fbd90c80-7d3f-422d-afd7-4d9dbdbd0c64
+            IsEnabled: true
+            LocalOrientation:
+              W: 1.0
+              X: 0.0
+              Y: 0.0
+              Z: 0.0
+            LocalPosition:
+              X: 0.0
+              Y: 1.39101887
+              Z: 1.65823266E-07
+            LocalScale:
+              X: 1.0
+              Y: 1.0
+              Z: 1.0
+          - !WaveEngine.Framework.Graphics.PhotometricPointLight,WaveEngine.Framework
+            Id: bf6c5615-c42e-4b9f-8289-c58d5557744f
+            Color:
+              A: 255
+              B: 255
+              G: 255
+              R: 255
+            ColorByTemperature: true
+            DepthBias: 0.0
+            Intensity: 1.19366205
+            IsEnabled: true
+            IsShadowEnabled: false
+            LightRange: 3.0
+            LinearColor:
+              A: 1.0
+              B: 1.0
+              G: 1.0
+              R: 1.0
+            LuminousPower: 15.0
+            ShadowsOpacity: 0.0
+            Temperature: 6500.0
+        Children: []
+        Id: 72e63a1b-f428-4163-b6b7-64e1cf626766
     Id: 38840aef-7831-48cc-832f-4f0716c97ba7
+  - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
+    Name: dragForce
+    Tag: null
+    IsEnabled: true
+    IsStatic: false
+    Components:
+      - !WaveEngine.Framework.Graphics.Transform3D,WaveEngine.Framework
+        Id: 3b15bb13-fcb1-47b4-a240-bf8275eff195
+        IsEnabled: true
+        LocalOrientation:
+          W: 1.0
+          X: 0.0
+          Y: 0.0
+          Z: 0.0
+        LocalPosition:
+          X: 16.0
+          Y: 0.0
+          Z: 0.0
+        LocalScale:
+          X: 1.0
+          Y: 1.0
+          Z: 1.0
+    Children:
+      - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
+        Name: particles
+        Tag: null
+        IsEnabled: true
+        IsStatic: false
+        Components:
+          - !WaveEngine.Framework.Graphics.Transform3D,WaveEngine.Framework
+            Id: bd4587ab-84bd-493f-ba3f-07b73c4eea20
+            IsEnabled: true
+            LocalOrientation:
+              W: 1.0
+              X: 0.0
+              Y: 0.0
+              Z: 0.0
+            LocalPosition:
+              X: 0.0
+              Y: 0.5
+              Z: 1.80488328E-07
+            LocalScale:
+              X: 1.0
+              Y: 1.0
+              Z: 1.0
+          - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
+            Id: 97259cba-93a6-44ca-a339-d47d20817190
+            DistanceRate: 0.0
+            IsEnabled: true
+            Rate: 1000.0
+          - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
+            Id: b7980c31-eb99-4eff-8a93-30c88886cd07
+            ColorAnimated: true
+            ColorOverLife1:
+              A: 0
+              B: 0
+              G: 0
+              R: 0
+            ColorOverLife2:
+              A: 255
+              B: 255
+              G: 255
+              R: 255
+            ColorOverLife2Position: 0.200000003
+            ColorOverLife3:
+              A: 255
+              B: 255
+              G: 255
+              R: 255
+            ColorOverLife3Position: 0.707538664
+            ColorOverLife4:
+              A: 0
+              B: 0
+              G: 0
+              R: 0
+            Drag: 0.100000009
+            ForcesCategory: All
+            ForcesEnabled: true
+            Gravity: 0.0
+            InitAngle: 0.0
+            InitAngle2: 0.0
+            InitAngleMode: Constant
+            InitAngularVelocity: 0.0
+            InitAngularVelocity2: 0.0
+            InitAngularVelocityMode: Constant
+            InitColor:
+              A: 255
+              B: 255
+              G: 255
+              R: 255
+            InitColor2:
+              A: 255
+              B: 221
+              G: 0
+              R: 255
+            InitColorMode: RandomBetweenTwoConstants
+            InitLife: 3.0
+            InitLife2: 7.0
+            InitLifeMode: RandomBetweenTwoConstants
+            InitSize: 0.0199999996
+            InitSize2: 0.0599999987
+            InitSizeMode: RandomBetweenTwoConstants
+            InitVelocity: 1.0
+            InitVelocity2: 1.5
+            InitVelocityMode: RandomBetweenTwoConstants
+            IsEnabled: true
+            LifeFactor: 1.0
+            MaxParticles: 5000
+            NoiseEnabled: false
+            NoiseFrequency: 0.200000003
+            NoiseSize: 10.0
+            NoiseSpeed:
+              X: 1.0
+              Y: 1.0
+              Z: 1.0
+            NoiseStrength: 0.0500000007
+            ParticleSampler: null
+            ParticleTexture: 983b36f8-5b75-4c4d-a03b-36e462786332
+            RandomPrecission: Medium
+            RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+            SimulationSpace: World
+            SizeAnimated: false
+            SizeOverLife1: 0.0
+            SizeOverLife2: 1.0
+            SizeOverLife2Position: 0.191086724
+            SizeOverLife3: 1.0
+            SizeOverLife3Position: 0.800000012
+            SizeOverLife4: 0.0
+            TimeFactor: 1.0
+            UseComputeParticles: true
+          - !WaveEngine.Framework.Particles.ParticleSystemRenderer,WaveEngine.Framework
+            Id: dd75373e-4b3a-4d73-b3c6-eface7106b46
+            DebugBoundingbox: true
+            IsCullingEnabled: true
+            IsEnabled: true
+            OrderBias: 0
+          - !WaveEngine.Framework.Particles.BoxShapeEmitter,WaveEngine.Framework
+            Id: c8690e26-a1ea-4660-8572-3c6e2362025e
+            FromCenter: false
+            IsEnabled: true
+            Randomize: 0.200000003
+            Size:
+              X: 1.0
+              Y: 0.100000001
+              Z: 1.0
+            VelocityOffset:
+              X: 0.0
+              Y: 0.0
+              Z: 0.0
+        Children: []
+        Id: 29edb05c-aa52-4893-9318-43384ce4e33d
+      - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
+        Name: dragForce
+        Tag: null
+        IsEnabled: true
+        IsStatic: false
+        Components:
+          - !WaveEngine.Framework.Graphics.Transform3D,WaveEngine.Framework
+            Id: 3161a8ce-a130-4fc3-92d2-c027229ca8c9
+            IsEnabled: true
+            LocalOrientation:
+              W: 1.0
+              X: 0.0
+              Y: 0.0
+              Z: 0.0
+            LocalPosition:
+              X: -0.699999809
+              Y: 2.5
+              Z: 2.31437042E-07
+            LocalScale:
+              X: 1.0
+              Y: 1.0
+              Z: 1.0
+          - !WaveEngine.Framework.Particles.Forces.DragForce,WaveEngine.Framework
+            Id: 6607260d-8f53-40a1-9a9c-6a87e88665bc
+            DecayEnabled: true
+            ForceCategory: Cat1
+            IsEnabled: true
+            Range: 1.0
+            RangeEnabled: true
+            Strength: 100.0
+        Children: []
+        Id: 3f625b61-e0ac-44cc-96da-18fa4bbf84a8
+      - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
+        Name: photometricPointLight
+        Tag: null
+        IsEnabled: true
+        IsStatic: false
+        Components:
+          - !WaveEngine.Framework.Graphics.Transform3D,WaveEngine.Framework
+            Id: fccd3796-16d9-4de8-a9b4-4e4bfd5a0589
+            IsEnabled: true
+            LocalOrientation:
+              W: 1.0
+              X: 0.0
+              Y: 0.0
+              Z: 0.0
+            LocalPosition:
+              X: 0.0
+              Y: 1.36598432
+              Z: 1.62836301E-07
+            LocalScale:
+              X: 1.0
+              Y: 1.0
+              Z: 1.0
+          - !WaveEngine.Framework.Graphics.PhotometricPointLight,WaveEngine.Framework
+            Id: fd1ad33a-4341-4a76-98cb-b847f71c64b4
+            Color:
+              A: 255
+              B: 207
+              G: 129
+              R: 196
+            ColorByTemperature: false
+            DepthBias: 0.0
+            Intensity: 3.97887349
+            IsEnabled: true
+            IsShadowEnabled: false
+            LightRange: 3.0
+            LinearColor:
+              A: 1.0
+              B: 0.632042646
+              G: 0.223310426
+              R: 0.560499191
+            LuminousPower: 50.0
+            ShadowsOpacity: 0.0
+            Temperature: 6500.0
+        Children: []
+        Id: a4a8d3b9-5bff-4e53-8b2d-6facd01a07b5
+    Id: 67b55ede-2682-4359-a995-72c66617709f
 Managers: []
