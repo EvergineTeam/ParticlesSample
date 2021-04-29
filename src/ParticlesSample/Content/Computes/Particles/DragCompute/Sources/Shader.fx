@@ -1,7 +1,7 @@
 [Begin_ResourceLayout]
-	[directives:Range RANGE_OFF RANGE]
-	[directives:Decay DECAY_OFF DECAY]
-	[directives:SimulationSpace LOCAL_OFF LOCAL]
+	[Directives:Range RANGE_OFF RANGE]
+	[Directives:Decay DECAY_OFF DECAY]
+	[Directives:SimulationSpace LOCAL_OFF LOCAL]
 
 	struct AttractedParticle
 	{
@@ -36,8 +36,8 @@
 
 [Begin_Pass:Force]
 
-	[profile 11_0]
-	[entrypoints CS=CS]
+	[Profile 11_0]
+	[Entrypoints CS=CS]
 	
 	[numthreads(256, 1, 1)]
 	void CS(uint3 id : SV_DispatchThreadID)

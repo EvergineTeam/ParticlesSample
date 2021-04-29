@@ -1,11 +1,11 @@
 [Begin_ResourceLayout]
-	[directives:Random RANDOM_LOW RANDOM_MEDIUM RANDOM_HIGH]
-	[directives:Entity ENTITY_OFF ENTITY_SK ENTITY_STATIC_SK ENTITY_STATIC]	
-	[directives:EmitMeshType FROM_VERTEX FROM_EDGE FROM_TRIANGLE]	
-	[directives:Range RANGE_OFF RANGE]
-	[directives:Decay DECAY_OFF DECAY]
-	[directives:Cutout CUTOUT_OFF CUTOUT]
-	[directives:SimulationSpace LOCAL_OFF LOCAL]
+	[Directives:Random RANDOM_LOW RANDOM_MEDIUM RANDOM_HIGH]
+	[Directives:Entity ENTITY_OFF ENTITY_SK ENTITY_STATIC_SK ENTITY_STATIC]	
+	[Directives:EmitMeshType FROM_VERTEX FROM_EDGE FROM_TRIANGLE]	
+	[Directives:Range RANGE_OFF RANGE]
+	[Directives:Decay DECAY_OFF DECAY]
+	[Directives:Cutout CUTOUT_OFF CUTOUT]
+	[Directives:SimulationSpace LOCAL_OFF LOCAL]
 
 	struct AttractedParticle
 	{
@@ -81,8 +81,8 @@
 
 [Begin_Pass:Force]
 
-	[profile 11_0]
-	[entrypoints CS=CS]
+	[Profile 11_0]
+	[Entrypoints CS=CS]
 	
 #if ENTITY_SK || ENTITY_STATIC_SK || ENTITY_STATIC		
 	uint rand_lcg(inout uint rng_state)

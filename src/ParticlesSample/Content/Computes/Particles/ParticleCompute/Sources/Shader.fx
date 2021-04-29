@@ -1,24 +1,24 @@
 [Begin_ResourceLayout]
-	[directives:Random RANDOM_LOW RANDOM_MEDIUM RANDOM_HIGH]
-	[directives:EmitShape POINT SPHERE BOX ENTITY CIRCLE EDGE]
-	[directives:EmitSurface FROM_SURFACE_OFF FROM_SURFACE]
-	[directives:EmitFromNormal FROM_NORMAL_OFF FROM_NORMAL]
-	[directives:EmitRandomized EMIT_RANDOMIZED_OFF EMIT_RANDOMIZED EMIT_FULL_RANDOMIZED]
-	[directives:EmitMeshType FROM_OFF FROM_VERTEX FROM_EDGE FROM_TRIANGLE]	
-	[directives:EmitEntity ENTITY_OFF ENTITY_SK ENTITY_STATIC_SK ENTITY_STATIC]	
-	[directives:Space LOCAL_OFF LOCAL]
+	[Directives:Random RANDOM_LOW RANDOM_MEDIUM RANDOM_HIGH]
+	[Directives:EmitShape POINT SPHERE BOX ENTITY CIRCLE EDGE]
+	[Directives:EmitSurface FROM_SURFACE_OFF FROM_SURFACE]
+	[Directives:EmitFromNormal FROM_NORMAL_OFF FROM_NORMAL]
+	[Directives:EmitRandomized EMIT_RANDOMIZED_OFF EMIT_RANDOMIZED EMIT_FULL_RANDOMIZED]
+	[Directives:EmitMeshType FROM_OFF FROM_VERTEX FROM_EDGE FROM_TRIANGLE]	
+	[Directives:EmitEntity ENTITY_OFF ENTITY_SK ENTITY_STATIC_SK ENTITY_STATIC]	
+	[Directives:Space LOCAL_OFF LOCAL]
 	
-	[directives:RandomLife RANDOM_LIFE_OFF RANDOM_LIFE]
-	[directives:RandomColor RANDOM_COLOR_OFF RANDOM_COLOR]
-	[directives:RandomSize RANDOM_SIZE_OFF RANDOM_SIZE]
-	[directives:RandomAngle RANDOM_ANGLE_OFF RANDOM_ANGLE]
-	[directives:RandomAngularVelocity RANDOM_ANGULAR_VELOCITY_OFF RANDOM_ANGULAR_VELOCITY]
-	[directives:RandomVelocity RANDOM_VELOCITY_OFF RANDOM_VELOCITY]
+	[Directives:RandomLife RANDOM_LIFE_OFF RANDOM_LIFE]
+	[Directives:RandomColor RANDOM_COLOR_OFF RANDOM_COLOR]
+	[Directives:RandomSize RANDOM_SIZE_OFF RANDOM_SIZE]
+	[Directives:RandomAngle RANDOM_ANGLE_OFF RANDOM_ANGLE]
+	[Directives:RandomAngularVelocity RANDOM_ANGULAR_VELOCITY_OFF RANDOM_ANGULAR_VELOCITY]
+	[Directives:RandomVelocity RANDOM_VELOCITY_OFF RANDOM_VELOCITY]
 	
-	[directives:Noise NOISE_OFF NOISE]
-	[directives:ColorAnimated COLOR_ANIMATED_OFF COLOR_ANIMATED]
-	[directives:SizeAnimated SIZE_ANIMATED_OFF SIZE_ANIMATED]
-	[directives:Drag DRAG_OFF DRAG]
+	[Directives:Noise NOISE_OFF NOISE]
+	[Directives:ColorAnimated COLOR_ANIMATED_OFF COLOR_ANIMATED]
+	[Directives:SizeAnimated SIZE_ANIMATED_OFF SIZE_ANIMATED]
+	[Directives:Drag DRAG_OFF DRAG]
 	
 	struct ParticleStateA
 	{
@@ -164,10 +164,28 @@
 
 [End_ResourceLayout]
 
-[Begin_Pass:Emit]
+[Begin_Pass:Reset]
 
 	[profile 11_0]
 	[entrypoints CS=CS]
+	[numthreads(256, 1, 1)]
+	void CS(uint3 id : SV_DispatchThreadID)
+	{
+		if (id.x < MaxParticles)
+		{
+			deadList[id.x] = id.x;			
+			particleBufferA[id.x] = (ParticleStateA)0;
+			particleBufferB[id.x] = (ParticleStateB)0;
+			counters[0].deadParticles = MaxParticles;
+		}
+	}
+
+[End_Pass]
+
+[Begin_Pass:Emit]
+
+	[Profile 11_0]
+	[Entrypoints CS=CS]
 	
 	
 	uint rand_lcg(inout uint rng_state)
@@ -240,6 +258,23 @@
     	return float3(sn * xy, cs * xy, z);
 	}
 	
+	float3 RandomInUnitCircle(inout uint seed)
+	{
+    	float r = sqrt(RandomFloat(seed));
+		float PI2 = 6.28318530718;
+    	float sn, cs;
+    	sincos(PI2 * RandomFloat(seed), sn, cs);
+    	return float3(sn * r, 0, cs * r);
+	}
+	
+	float3 RandomOnUnitCircle(inout uint seed)
+	{
+		float PI2 = 6.28318530718;
+    	float sn, cs;
+    	sincos(PI2 * RandomFloat(seed), sn, cs);
+    	return float3(sn, 0, cs);
+	}
+	
 #if SPHERE	
 	void EmitSphere (inout float seed, inout float3 position, inout float3 direction)
 	{
@@ -248,6 +283,30 @@
 				position =  RandomOnUnitSphere(seed);
 #else
 				position = RandomInUnitSphere(seed);
+#endif
+				
+#if EMIT_FULL_RANDOMIZED
+		direction = RandomOnUnitSphere(seed);		
+#elif FROM_NORMAL && FROM_SURFACE			
+				direction = position;
+#elif FROM_NORMAL
+				direction = normalize(position);
+#else
+				direction = float3(0,1,0);
+#endif		
+		
+				position *= EmitSize.x;
+	}
+#endif
+
+#if CIRCLE	
+	void EmitCircle(inout float seed, inout float3 position, inout float3 direction)
+	{
+		// Sphere emit
+#if FROM_SURFACE
+				position =  RandomInUnitCircle(seed);
+#else
+				position = RandomOnUnitCircle(seed);
 #endif
 				
 #if EMIT_FULL_RANDOMIZED
@@ -449,6 +508,8 @@
 			EmitEdge(seed, pA.Position, initDirection);
 #elif BOX
 			EmitBox(seed, pA.Position, initDirection);
+#elif CIRCLE
+			EmitCircle(seed, pA.Position, initDirection);
 #elif ENTITY
 			uint emitSeed = pB.Seed;
 			EmitMesh(emitSeed, pA.Position, initDirection);
@@ -500,8 +561,8 @@
 
 [Begin_Pass:Simulate]
 
-	[profile 11_0]
-	[entrypoints CS=CS]
+	[Profile 11_0]
+	[Entrypoints CS=CS]
 
 	
 	// noise functions
@@ -539,7 +600,7 @@
 	
 			if (pB.RemainingLerp > 0)
 			{
-				pB.RemainingLerp -= ellapsed / pB.DeadTime;
+				pB.RemainingLerp -= (ellapsed * LifeFactor) / pB.DeadTime;
 	
 				if (pB.RemainingLerp <= 0)
 				{

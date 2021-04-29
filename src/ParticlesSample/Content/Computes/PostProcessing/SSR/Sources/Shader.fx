@@ -25,8 +25,8 @@
 
 [Begin_Pass:Default]
 
-[profile 11_0]
-[entrypoints CS = CS]
+	[Profile 11_0]
+	[Entrypoints CS = CS]
 	
 	float3 GetScreenPos(float2 uv, float depth)
 	{	    

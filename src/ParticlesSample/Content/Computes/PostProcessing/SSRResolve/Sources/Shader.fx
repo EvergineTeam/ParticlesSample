@@ -1,5 +1,5 @@
 [Begin_ResourceLayout]
-	[directives:Output None_OFF Reflection]
+	[Directives:Output None_OFF Reflection]
 
 	cbuffer Parameters : register(b0)
 	{
@@ -17,8 +17,8 @@
 
 [Begin_Pass:Default]
 
-[profile 11_0]
-[entrypoints CS = CS]
+	[Profile 11_0]
+	[Entrypoints CS = CS]
 
 	[numthreads(8, 8, 1)]
 	void CS(uint3 threadID : SV_DispatchThreadID)

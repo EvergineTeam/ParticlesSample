@@ -20,6 +20,6 @@ Profiles:
     Compile: Yes
     ExcludeAsset: false
     GraphicsBackend: ByPlatform
-    MandatoryCombinations: DIFF, DIFF-ANGLE, DIFF-ANGLE-WORLD, DIFF-WORLD, ANGLE, ANGLE-WORLD, WORLD
+    MandatoryCombinations: DIFF, DIFF-ANGLE, DIFF-ANGLE-LOCAL, DIFF-LOCAL, ANGLE, ANGLE-LOCAL, LOCAL,  HIGHLIGHTS-DIFF, HIGHLIGHTS-DIFF-ANGLE, HIGHLIGHTS-DIFF-ANGLE-LOCAL, HIGHLIGHTS-DIFF-LOCAL
     Name: WebGL1
     Platform: Web

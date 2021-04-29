@@ -35,6 +35,7 @@ Items:
         Id: 5b10653e-93d2-48e7-884f-a07b2ac173ee
         Aperture: 1.0
         AspectRatio: 1.96727276
+        AutoDepthBounds: false
         AutoExposureEnabled: false
         CameraOrder: 0.0
         ClearDepth: 1.0
@@ -118,12 +119,7 @@ Items:
         InitialU: 0.0
         InitialV: 0.0
         IsEnabled: true
-        Model: 00000000-0000-0000-0000-000000000000
-        ModelMeshName: plane_primitive
-        Normal:
-          X: 0.0
-          Y: 1.0
-          Z: 0.0
+        PlaneNormal: YPositive
         TwoSides: false
         UTile: 10.0
         UVHorizontalFlip: false
@@ -136,6 +132,7 @@ Items:
         IsCullingEnabled: true
         IsEnabled: true
         OrderBias: 0
+        RenderFlags: CastShadows
     Children: []
     Id: c9365fad-8129-41af-9d55-2d810d6a1514
   - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
@@ -168,6 +165,7 @@ Items:
         IsGlobal: true
         LayerOrder: 10
         OrderBias: 0
+        RenderFlags: CastShadows
         ppGraph: dd593717-0922-4f58-9c85-c309658eff03
       - !WaveEngine.Framework.Physics3D.BoxCollider3D,WaveEngine.Framework
         Id: 660905fe-beb5-43ed-ba74-d79a0c4f8fc0
@@ -236,6 +234,7 @@ Items:
           - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
             Id: db9abce4-d49a-46b7-9e57-a1aedc56a08c
             DistanceRate: 0.0
+            Duration: 0.0
             IsEnabled: true
             Rate: 200000.0
           - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -264,6 +263,7 @@ Items:
               G: 0
               R: 0
             Drag: 2.0
+            EmitAutomatically: true
             ForcesCategory: All
             ForcesEnabled: true
             Gravity: 0.0
@@ -306,8 +306,9 @@ Items:
             NoiseStrength: 0.00999999978
             ParticleSampler: null
             ParticleTexture: 11aaa15a-bf0d-4ab0-a140-556dbe248648
+            PreserveHighlights: false
             RandomPrecission: Medium
-            RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+            RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
             SimulationSpace: World
             SizeAnimated: false
             SizeOverLife1: 0.0
@@ -324,6 +325,7 @@ Items:
             IsCullingEnabled: true
             IsEnabled: true
             OrderBias: 0
+            RenderFlags: CastShadows
           - !WaveEngine.Framework.Particles.SphereShapeEmitter,WaveEngine.Framework
             Id: 89466f0e-d33e-4c3f-9075-64e205e063b7
             FromCenter: false
@@ -451,6 +453,7 @@ Items:
                   - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
                     Id: 2f810b42-b78b-4c91-a31e-503dc7a9167e
                     DistanceRate: 0.0
+                    Duration: 0.0
                     IsEnabled: true
                     Rate: 5.0
                   - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -479,6 +482,7 @@ Items:
                       G: 0
                       R: 0
                     Drag: 0.0
+                    EmitAutomatically: true
                     ForcesCategory: All
                     ForcesEnabled: false
                     Gravity: 0.0
@@ -521,8 +525,9 @@ Items:
                     NoiseStrength: 1.0
                     ParticleSampler: null
                     ParticleTexture: 4a5f9905-5d72-42e1-926e-76af2e2e5f3c
+                    PreserveHighlights: false
                     RandomPrecission: Medium
-                    RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+                    RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
                     SimulationSpace: Local
                     SizeAnimated: false
                     SizeOverLife1: 0.5
@@ -539,6 +544,7 @@ Items:
                     IsCullingEnabled: true
                     IsEnabled: true
                     OrderBias: 0
+                    RenderFlags: CastShadows
                 Children: []
                 Id: e8968ee7-d20d-4ac6-91fe-a54e5ae48fa8
               - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
@@ -568,8 +574,9 @@ Items:
                     DebugBoundingbox: true
                     IsCullingEnabled: true
                     IsEnabled: true
-                    Layer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+                    Layer: 8e7317aa-3a55-45c6-82a5-47d333abe272
                     OrderBias: 0
+                    RenderFlags: CastShadows
                   - !WaveEngine.Components.Graphics3D.Billboard,WaveEngine.Components
                     Id: 78834e52-30d3-4ea8-96ac-cdacc6a6c79d
                     BillboardType: PointOrientation
@@ -618,7 +625,7 @@ Items:
                       G: 137
                       R: 255
                     ColorByTemperature: true
-                    DepthBias: 0.0
+                    DebugMode: false
                     Intensity: 2.38732409
                     IsEnabled: true
                     IsShadowEnabled: false
@@ -629,7 +636,8 @@ Items:
                       G: 0.253855526
                       R: 1.0
                     LuminousPower: 30.0
-                    ShadowsOpacity: 0.0
+                    ShadowBias: 0.00400000019
+                    ShadowOpacity: 1.0
                     Temperature: 2000.0
                 Children: []
                 Id: e59ac773-a9a1-48e9-9860-79e96c5dbe25
@@ -664,8 +672,6 @@ Items:
                     Id: 23dd1c75-7a0c-435f-ac66-3e4fd1386e08
                     Diameter: 0.0500000007
                     IsEnabled: true
-                    Model: 00000000-0000-0000-0000-000000000000
-                    ModelMeshName: sphere_primitive
                     Tessellation: 14
                     UVHorizontalFlip: false
                     UVVerticalFlip: false
@@ -675,6 +681,7 @@ Items:
                     IsCullingEnabled: true
                     IsEnabled: true
                     OrderBias: 0
+                    RenderFlags: CastShadows
                 Children: []
                 Id: 0c78cc8f-a2c3-4339-b43f-c0d8826c22fa
             Id: 79857351-b349-429d-856c-87317ddd21a0
@@ -761,6 +768,7 @@ Items:
                   - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
                     Id: 353bef70-62e7-42f1-92b7-c6db6fc43ffe
                     DistanceRate: 0.0
+                    Duration: 0.0
                     IsEnabled: true
                     Rate: 3.0
                   - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -789,6 +797,7 @@ Items:
                       G: 0
                       R: 0
                     Drag: 0.0
+                    EmitAutomatically: true
                     ForcesCategory: All
                     ForcesEnabled: false
                     Gravity: 0.0
@@ -831,8 +840,9 @@ Items:
                     NoiseStrength: 1.0
                     ParticleSampler: null
                     ParticleTexture: 4a5f9905-5d72-42e1-926e-76af2e2e5f3c
+                    PreserveHighlights: false
                     RandomPrecission: Medium
-                    RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+                    RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
                     SimulationSpace: Local
                     SizeAnimated: false
                     SizeOverLife1: 0.5
@@ -849,6 +859,7 @@ Items:
                     IsCullingEnabled: true
                     IsEnabled: true
                     OrderBias: 0
+                    RenderFlags: CastShadows
                 Children: []
                 Id: b3e41aec-3107-437f-945e-a638127f90ca
               - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
@@ -878,8 +889,9 @@ Items:
                     DebugBoundingbox: true
                     IsCullingEnabled: true
                     IsEnabled: true
-                    Layer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+                    Layer: 8e7317aa-3a55-45c6-82a5-47d333abe272
                     OrderBias: 0
+                    RenderFlags: CastShadows
                   - !WaveEngine.Components.Graphics3D.Billboard,WaveEngine.Components
                     Id: 27968391-d674-4051-b4c2-a840b672b873
                     BillboardType: PointOrientation
@@ -928,7 +940,7 @@ Items:
                       G: 179
                       R: 255
                     ColorByTemperature: true
-                    DepthBias: 0.0
+                    DebugMode: false
                     Intensity: 1.5915494
                     IsEnabled: true
                     IsShadowEnabled: false
@@ -939,7 +951,8 @@ Items:
                       G: 0.457798362
                       R: 1.0
                     LuminousPower: 20.0
-                    ShadowsOpacity: 0.0
+                    ShadowBias: 0.00400000019
+                    ShadowOpacity: 1.0
                     Temperature: 3000.0
                 Children: []
                 Id: 8099f1db-4e89-405c-80ea-51bc2aca6c99
@@ -974,8 +987,6 @@ Items:
                     Id: 7a22b1e9-f8d4-48c2-b324-5e9edfa78aea
                     Diameter: 0.0299999993
                     IsEnabled: true
-                    Model: 00000000-0000-0000-0000-000000000000
-                    ModelMeshName: sphere_primitive
                     Tessellation: 16
                     UVHorizontalFlip: false
                     UVVerticalFlip: false
@@ -985,6 +996,7 @@ Items:
                     IsCullingEnabled: true
                     IsEnabled: true
                     OrderBias: 0
+                    RenderFlags: CastShadows
                 Children: []
                 Id: 90ee62f1-d41f-4f93-acfb-ed84c3bc8f83
             Id: f196ec98-bac4-4380-8bd0-e2a5f421eadf
@@ -3060,6 +3072,7 @@ Items:
                   - 473d74bc-4916-479c-b516-9b86698c4c10
                 MorphTargetWeights: []
                 OrderBias: 0
+                RenderFlags: CastShadows
                 RootJointId: 1c548add-a080-469d-9de5-0e097777e47c
                 UseComputeSkinning: true
             Children: []
@@ -3607,7 +3620,7 @@ Items:
                                                                               G: 77
                                                                               R: 9
                                                                             ColorByTemperature: false
-                                                                            DepthBias: 0.0
+                                                                            DebugMode: false
                                                                             Intensity: 0.0795774683
                                                                             IsEnabled: true
                                                                             IsShadowEnabled: false
@@ -3618,7 +3631,8 @@ Items:
                                                                               G: 0.0717614517
                                                                               R: 0.000638182799
                                                                             LuminousPower: 1.0
-                                                                            ShadowsOpacity: 0.0
+                                                                            ShadowBias: 0.00400000019
+                                                                            ShadowOpacity: 1.0
                                                                             Temperature: 500000.0
                                                                         Children: []
                                                                         Id: ba95e177-04c9-447e-8b05-e3bca2e2b372
@@ -4180,7 +4194,7 @@ Items:
                                                                               G: 128
                                                                               R: 0
                                                                             ColorByTemperature: false
-                                                                            DepthBias: 0.0
+                                                                            DebugMode: false
                                                                             Intensity: 0.0795774683
                                                                             IsEnabled: true
                                                                             IsShadowEnabled: false
@@ -4191,7 +4205,8 @@ Items:
                                                                               G: 0.219519734
                                                                               R: 0.0
                                                                             LuminousPower: 1.0
-                                                                            ShadowsOpacity: 0.0
+                                                                            ShadowBias: 0.00400000019
+                                                                            ShadowOpacity: 1.0
                                                                             Temperature: 500000.0
                                                                         Children: []
                                                                         Id: 3d6e0e99-d9c6-4bab-aab1-e42c5683c846
@@ -4705,7 +4720,7 @@ Items:
                                                                               G: 128
                                                                               R: 0
                                                                             ColorByTemperature: false
-                                                                            DepthBias: 0.0
+                                                                            DebugMode: false
                                                                             Intensity: 0.0795774683
                                                                             IsEnabled: true
                                                                             IsShadowEnabled: false
@@ -4716,7 +4731,8 @@ Items:
                                                                               G: 0.219519734
                                                                               R: 0.0
                                                                             LuminousPower: 1.0
-                                                                            ShadowsOpacity: 0.0
+                                                                            ShadowBias: 0.00400000019
+                                                                            ShadowOpacity: 1.0
                                                                             Temperature: 500000.0
                                                                         Children: []
                                                                         Id: cf7abd27-3a2f-4419-a128-7438904e5924
@@ -4928,7 +4944,7 @@ Items:
                                       G: 122
                                       R: 70
                                     ColorByTemperature: false
-                                    DepthBias: 0.0
+                                    DebugMode: false
                                     Intensity: 0.795774698
                                     IsEnabled: true
                                     IsShadowEnabled: false
@@ -4939,7 +4955,8 @@ Items:
                                       G: 0.197516426
                                       R: 0.0581871793
                                     LuminousPower: 10.0
-                                    ShadowsOpacity: 0.0
+                                    ShadowBias: 0.00400000019
+                                    ShadowOpacity: 1.0
                                     Temperature: 500000.0
                                 Children: []
                                 Id: d728e44b-2a37-49e6-b959-8895390eb7f7
@@ -5666,7 +5683,7 @@ Items:
                                                   G: 128
                                                   R: 0
                                                 ColorByTemperature: false
-                                                DepthBias: 0.0
+                                                DebugMode: false
                                                 Intensity: 0.0795774683
                                                 IsEnabled: true
                                                 IsShadowEnabled: false
@@ -5677,7 +5694,8 @@ Items:
                                                   G: 0.219519734
                                                   R: 0.0
                                                 LuminousPower: 1.0
-                                                ShadowsOpacity: 0.0
+                                                ShadowBias: 0.00400000019
+                                                ShadowOpacity: 1.0
                                                 Temperature: 500000.0
                                             Children: []
                                             Id: e352733f-591c-4b31-b520-31d5a2256d08
@@ -6095,7 +6113,7 @@ Items:
                                                   G: 128
                                                   R: 0
                                                 ColorByTemperature: false
-                                                DepthBias: 0.0
+                                                DebugMode: false
                                                 Intensity: 0.0795774683
                                                 IsEnabled: true
                                                 IsShadowEnabled: false
@@ -6106,7 +6124,8 @@ Items:
                                                   G: 0.219519734
                                                   R: 0.0
                                                 LuminousPower: 1.0
-                                                ShadowsOpacity: 0.0
+                                                ShadowBias: 0.00400000019
+                                                ShadowOpacity: 1.0
                                                 Temperature: 500000.0
                                             Children: []
                                             Id: 48ce8423-77a2-4465-8860-f1c2bb0a3add
@@ -6253,6 +6272,7 @@ Items:
             IsCullingEnabled: true
             IsEnabled: true
             OrderBias: 0
+            RenderFlags: CastShadows
         Children:
           - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
             Name: photometricPointLight
@@ -6284,7 +6304,7 @@ Items:
                   G: 128
                   R: 0
                 ColorByTemperature: false
-                DepthBias: 0.0
+                DebugMode: false
                 Intensity: 0.795774698
                 IsEnabled: true
                 IsShadowEnabled: false
@@ -6295,7 +6315,8 @@ Items:
                   G: 0.219519734
                   R: 0.0
                 LuminousPower: 10.0
-                ShadowsOpacity: 0.0
+                ShadowBias: 0.00400000019
+                ShadowOpacity: 1.0
                 Temperature: 500000.0
             Children: []
             Id: 5641dac1-6dfc-41f8-83b0-a53649797936
@@ -6325,6 +6346,7 @@ Items:
           - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
             Id: 8211b41b-50fe-4a66-834c-a325d0fb8d7a
             DistanceRate: 0.0
+            Duration: 0.0
             IsEnabled: true
             Rate: 60000.0
           - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -6353,6 +6375,7 @@ Items:
               G: 0
               R: 0
             Drag: 10.0
+            EmitAutomatically: true
             ForcesCategory: All
             ForcesEnabled: false
             Gravity: -0.5
@@ -6395,8 +6418,9 @@ Items:
             NoiseStrength: 0.0500000007
             ParticleSampler: null
             ParticleTexture: bc966d42-0b04-474e-966e-1f0ca9de22f9
+            PreserveHighlights: false
             RandomPrecission: Medium
-            RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+            RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
             SimulationSpace: World
             SizeAnimated: true
             SizeOverLife1: 1.0
@@ -6413,6 +6437,7 @@ Items:
             IsCullingEnabled: true
             IsEnabled: true
             OrderBias: 0
+            RenderFlags: CastShadows
           - !WaveEngine.Framework.Particles.Shapes.EntityShapeEmitter,WaveEngine.Framework
             Id: 0a9f1897-9b04-496a-a4ff-97aa71192640
             EmissionSource: Triangle
@@ -6470,7 +6495,7 @@ Items:
               G: 122
               R: 70
             ColorByTemperature: false
-            DepthBias: 0.0
+            DebugMode: false
             Intensity: 7.95774698
             IsEnabled: true
             IsShadowEnabled: false
@@ -6481,7 +6506,8 @@ Items:
               G: 0.197516426
               R: 0.0581871793
             LuminousPower: 100.0
-            ShadowsOpacity: 0.0
+            ShadowBias: 0.00400000019
+            ShadowOpacity: 1.0
             Temperature: 500000.0
         Children: []
         Id: 8bb4002f-42aa-45cf-a195-5e8277b6798f
@@ -6601,6 +6627,7 @@ Items:
                     IsCullingEnabled: true
                     IsEnabled: true
                     OrderBias: 0
+                    RenderFlags: CastShadows
                 Children:
                   - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
                     Name: photometricTubeAreaLight
@@ -6632,7 +6659,7 @@ Items:
                           G: 255
                           R: 128
                         ColorByTemperature: false
-                        DepthBias: 0.0
+                        DebugMode: false
                         Intensity: 0.0397887342
                         IsEnabled: true
                         IsShadowEnabled: false
@@ -6645,7 +6672,8 @@ Items:
                           R: 0.219519734
                         LuminousPower: 0.5
                         Radius: 0.100000001
-                        ShadowsOpacity: 0.0
+                        ShadowBias: 0.00400000019
+                        ShadowOpacity: 1.0
                         Temperature: 3000.0
                     Children: []
                     Id: 35a4524d-3859-487f-bc47-f0fc326ad42c
@@ -6679,7 +6707,7 @@ Items:
                           G: 255
                           R: 128
                         ColorByTemperature: false
-                        DepthBias: 0.0
+                        DebugMode: false
                         Intensity: 0.0397887342
                         IsEnabled: true
                         IsShadowEnabled: false
@@ -6692,7 +6720,8 @@ Items:
                           R: 0.219519734
                         LuminousPower: 0.5
                         Radius: 0.100000001
-                        ShadowsOpacity: 0.0
+                        ShadowBias: 0.00400000019
+                        ShadowOpacity: 1.0
                         Temperature: 3000.0
                     Children: []
                     Id: 1ea69f38-6ab7-458c-8469-f46ba50cb100
@@ -6721,6 +6750,7 @@ Items:
                       - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
                         Id: 58efcffc-6678-4caf-86b7-eceb1105822d
                         DistanceRate: 0.00499999989
+                        Duration: 0.0
                         IsEnabled: true
                         Rate: 10000.0
                       - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -6749,6 +6779,7 @@ Items:
                           G: 0
                           R: 0
                         Drag: 2.0
+                        EmitAutomatically: true
                         ForcesCategory: All
                         ForcesEnabled: false
                         Gravity: -0.300000012
@@ -6791,8 +6822,9 @@ Items:
                         NoiseStrength: 0.0199999996
                         ParticleSampler: null
                         ParticleTexture: bc966d42-0b04-474e-966e-1f0ca9de22f9
+                        PreserveHighlights: false
                         RandomPrecission: Medium
-                        RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+                        RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
                         SimulationSpace: World
                         SizeAnimated: false
                         SizeOverLife1: 1.0
@@ -6809,6 +6841,7 @@ Items:
                         IsCullingEnabled: true
                         IsEnabled: true
                         OrderBias: 0
+                        RenderFlags: CastShadows
                       - !WaveEngine.Framework.Particles.EdgeShapeEmitter,WaveEngine.Framework
                         Id: 69ff1625-4d7b-4067-98cf-431329125d76
                         FromCenter: true
@@ -6860,6 +6893,7 @@ Items:
                     IsCullingEnabled: true
                     IsEnabled: true
                     OrderBias: 0
+                    RenderFlags: CastShadows
                 Children: []
                 Id: ac648a4d-a380-44c5-80ea-620762929b3e
             Id: 724dd394-bf6a-4b7b-bf93-905f5d9cb5e1
@@ -6894,7 +6928,7 @@ Items:
               G: 255
               R: 128
             ColorByTemperature: false
-            DepthBias: 0.0
+            DebugMode: false
             Intensity: 1.0
             IsEnabled: true
             IsShadowEnabled: false
@@ -6905,7 +6939,8 @@ Items:
               G: 1.0
               R: 0.219519734
             LuminousPower: 12.566371
-            ShadowsOpacity: 0.0
+            ShadowBias: 0.00400000019
+            ShadowOpacity: 1.0
             Temperature: 4000.0
         Children: []
         Id: 7c0ef774-4e49-4321-87e0-b75295a33e3a
@@ -6969,6 +7004,7 @@ Items:
           - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
             Id: 5c348c26-07d2-46d9-8bc4-254076572174
             DistanceRate: 0.0
+            Duration: 0.0
             IsEnabled: true
             Rate: 2.0
           - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -6997,6 +7033,7 @@ Items:
               G: 0
               R: 0
             Drag: 0.0
+            EmitAutomatically: true
             ForcesCategory: All
             ForcesEnabled: false
             Gravity: 0.0
@@ -7039,8 +7076,9 @@ Items:
             NoiseStrength: 1.0
             ParticleSampler: null
             ParticleTexture: 6cf0bb56-da3c-44d3-93bf-6c3ed7987667
+            PreserveHighlights: false
             RandomPrecission: Medium
-            RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+            RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
             SimulationSpace: World
             SizeAnimated: true
             SizeOverLife1: 1.0
@@ -7057,6 +7095,7 @@ Items:
             IsCullingEnabled: true
             IsEnabled: true
             OrderBias: 0
+            RenderFlags: CastShadows
         Children: []
         Id: 0b781ff8-04b0-48c8-ba07-d8632121224b
       - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
@@ -7089,7 +7128,7 @@ Items:
               G: 248
               R: 255
             ColorByTemperature: true
-            DepthBias: 0.0
+            DebugMode: false
             Intensity: 1.19366205
             IsEnabled: true
             IsShadowEnabled: false
@@ -7100,7 +7139,8 @@ Items:
               G: 0.943362474
               R: 1.0
             LuminousPower: 15.0
-            ShadowsOpacity: 0.0
+            ShadowBias: 0.00400000019
+            ShadowOpacity: 1.0
             Temperature: 6500.0
         Children: []
         Id: 72e63a1b-f428-4163-b6b7-64e1cf626766
@@ -7153,6 +7193,7 @@ Items:
           - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
             Id: 97259cba-93a6-44ca-a339-d47d20817190
             DistanceRate: 0.0
+            Duration: 0.0
             IsEnabled: true
             Rate: 1000.0
           - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -7181,6 +7222,7 @@ Items:
               G: 0
               R: 0
             Drag: 0.100000009
+            EmitAutomatically: true
             ForcesCategory: All
             ForcesEnabled: true
             Gravity: 0.0
@@ -7223,8 +7265,9 @@ Items:
             NoiseStrength: 0.0500000007
             ParticleSampler: null
             ParticleTexture: 983b36f8-5b75-4c4d-a03b-36e462786332
+            PreserveHighlights: false
             RandomPrecission: Medium
-            RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+            RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
             SimulationSpace: World
             SizeAnimated: false
             SizeOverLife1: 0.0
@@ -7241,6 +7284,7 @@ Items:
             IsCullingEnabled: true
             IsEnabled: true
             OrderBias: 0
+            RenderFlags: CastShadows
           - !WaveEngine.Framework.Particles.BoxShapeEmitter,WaveEngine.Framework
             Id: c8690e26-a1ea-4660-8572-3c6e2362025e
             FromCenter: false
@@ -7318,7 +7362,7 @@ Items:
               G: 129
               R: 196
             ColorByTemperature: false
-            DepthBias: 0.0
+            DebugMode: false
             Intensity: 3.97887349
             IsEnabled: true
             IsShadowEnabled: false
@@ -7329,7 +7373,8 @@ Items:
               G: 0.223310426
               R: 0.560499191
             LuminousPower: 50.0
-            ShadowsOpacity: 0.0
+            ShadowBias: 0.00400000019
+            ShadowOpacity: 1.0
             Temperature: 6500.0
         Children: []
         Id: a4a8d3b9-5bff-4e53-8b2d-6facd01a07b5
@@ -7387,7 +7432,7 @@ Items:
               G: 255
               R: 126
             ColorByTemperature: false
-            DepthBias: 0.0
+            DebugMode: false
             Intensity: 1.57643223
             IsEnabled: true
             IsShadowEnabled: false
@@ -7398,7 +7443,8 @@ Items:
               G: 1.0
               R: 0.212044388
             LuminousPower: 19.8100319
-            ShadowsOpacity: 0.0
+            ShadowBias: 0.00400000019
+            ShadowOpacity: 1.0
             Temperature: 4000.0
         Children: []
         Id: e4aebf03-8c53-4c6e-882d-90d9c2338bd1
@@ -7463,6 +7509,7 @@ Items:
                 IsCullingEnabled: true
                 IsEnabled: true
                 OrderBias: 0
+                RenderFlags: CastShadows
             Children:
               - !WaveEngine.Framework.Assets.AssetSources.Entities.EntityItemModel,WaveEngine.Framework
                 Name: blades
@@ -7502,6 +7549,7 @@ Items:
                     IsCullingEnabled: true
                     IsEnabled: true
                     OrderBias: 0
+                    RenderFlags: CastShadows
                   - !WaveEngine.Components.Graphics3D.Spinner,WaveEngine.Components
                     Id: bbfcc3e7-fc7c-4d89-86a6-b0693f019cb3
                     AxisIncrease:
@@ -7582,6 +7630,7 @@ Items:
           - !WaveEngine.Framework.Particles.RateSpawn,WaveEngine.Framework
             Id: 9f4e037a-1e52-4af7-8cdd-1827eee0066d
             DistanceRate: 0.0
+            Duration: 0.0
             IsEnabled: true
             Rate: 9999.99512
           - !WaveEngine.Framework.Particles.ParticleSystem,WaveEngine.Framework
@@ -7610,6 +7659,7 @@ Items:
               G: 0
               R: 0
             Drag: 0.0
+            EmitAutomatically: true
             ForcesCategory: All
             ForcesEnabled: true
             Gravity: 0.0
@@ -7652,8 +7702,9 @@ Items:
             NoiseStrength: 0.100000001
             ParticleSampler: null
             ParticleTexture: 6cf0bb56-da3c-44d3-93bf-6c3ed7987667
+            PreserveHighlights: false
             RandomPrecission: Medium
-            RenderLayer: 9f4c323f-0152-4880-8d4c-99797b5e86b1
+            RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
             SimulationSpace: World
             SizeAnimated: true
             SizeOverLife1: 0.0
@@ -7670,6 +7721,7 @@ Items:
             IsCullingEnabled: true
             IsEnabled: true
             OrderBias: 0
+            RenderFlags: CastShadows
         Children: []
         Id: fbd3c741-340d-41c1-bcf8-ef1e828bbd74
     Id: 071bc1dc-70d8-431d-a1e5-f7edd6e780ca
