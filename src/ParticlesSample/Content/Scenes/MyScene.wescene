@@ -277,12 +277,12 @@ Items:
               A: 50
               B: 0
               G: 0
-              R: 50
+              R: 200
             InitColor2:
               A: 50
               B: 0
-              G: 50
-              R: 50
+              G: 200
+              R: 200
             InitColorMode: RandomBetweenTwoConstants
             InitLife: 5.0
             InitLife2: 5.0
@@ -7435,7 +7435,7 @@ Items:
             DebugMode: false
             Intensity: 1.57643223
             IsEnabled: true
-            IsShadowEnabled: false
+            IsShadowEnabled: true
             LightRange: 3.0
             LinearColor:
               A: 1.0
