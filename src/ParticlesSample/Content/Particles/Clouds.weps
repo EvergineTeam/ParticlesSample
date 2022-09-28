@@ -1,0 +1,96 @@
+!Evergine.Assets.Exporters.ParticlesMetaFile,Evergine.Assets
+Id: 052f8f1b-1ea3-4bbc-916c-ddf6acd0748c
+DefaultProfile:
+  ExcludeAsset: false
+  Name: null
+  Platform: Undefined
+Emitters:
+  - ColorAnimated: true
+    ColorOverLife1:
+      A: 0
+      B: 0
+      G: 0
+      R: 0
+    ColorOverLife2:
+      A: 255
+      B: 255
+      G: 255
+      R: 255
+    ColorOverLife2Position: 0.239999995
+    ColorOverLife3:
+      A: 255
+      B: 255
+      G: 255
+      R: 255
+    ColorOverLife3Position: 0.660000026
+    ColorOverLife4:
+      A: 0
+      B: 0
+      G: 0
+      R: 0
+    Drag: 0.0
+    ForcesCategory: All
+    ForcesEnabled: false
+    Gravity: 0.0
+    InitAngle: -2.98451304
+    InitAngle2: 2.98451304
+    InitAngleMode: RandomBetweenTwoConstants
+    InitAngularSpeed: -0.191986218
+    InitAngularSpeed2: 0.191986218
+    InitAngularSpeedMode: RandomBetweenTwoConstants
+    InitColor:
+      A: 255
+      B: 47
+      G: 51
+      R: 53
+    InitColor2:
+      A: 255
+      B: 48
+      G: 44
+      R: 42
+    InitColorMode: RandomBetweenTwoConstants
+    InitLife: 11.0
+    InitLife2: 15.0
+    InitLifeMode: RandomBetweenTwoConstants
+    InitSize: 1.0
+    InitSize2: 1.60000002
+    InitSizeMode: RandomBetweenTwoConstants
+    InitSpeed: -0.0199999996
+    InitSpeed2: 0.0199999996
+    InitSpeedMode: RandomBetweenTwoConstants
+    MaxParticles: 40
+    NoiseEnabled: false
+    NoiseFrequency: 1.0
+    NoiseSize: 1.0
+    NoiseStrength: 1.0
+    NoiseVelocity:
+      X: 1.0
+      Y: 1.0
+      Z: 1.0
+    ParticleSampler: 7d1e2792-2031-42bb-a67c-0dbd282be12a
+    ParticleTexture: 6cf0bb56-da3c-44d3-93bf-6c3ed7987667
+    PreserveHighlights: false
+    RandomPrecission: Medium
+    RenderLayer: 8e7317aa-3a55-45c6-82a5-47d333abe272
+    Shape: !Evergine.Framework.Particles.Shape.ShapeSphereDescription,Evergine.Framework
+      FromCenter: true
+      FromSurface: false
+      Radius: 1.0
+      RandomizeDirection: 0.0
+      VelocityOffset:
+        X: 0.0
+        Y: 0.0
+        Z: 0.0
+    SimulationSpace: World
+    SizeAnimated: true
+    SizeOverLife1: 1.0
+    SizeOverLife2: 1.0
+    SizeOverLife2Position: 0.0
+    SizeOverLife3: 1.5
+    SizeOverLife3Position: 1.0
+    SizeOverLife4: 2.0
+    Spawn: !Evergine.Framework.Particles.Spawn.SpawnRateDescription,Evergine.Framework
+      Duration: 0.0
+      Rate: 2.0
+ExportAsRaw: false
+Profiles: {}

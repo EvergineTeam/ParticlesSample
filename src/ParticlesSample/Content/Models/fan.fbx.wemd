@@ -1,5 +1,5 @@
 !Evergine.Assets.Exporters.ModelMetaFile,Evergine.Assets
-Id: 48054351-1276-47cd-a2ae-5c6daf8eab18
+Id: 5dbbad34-fecf-4358-b1f4-df760ecd5eac
 Clips: []
 DefaultProfile:
   ExcludeAsset: false
@@ -11,16 +11,16 @@ GenerateTangentSpace: true
 Profiles: {}
 Source:
   Header:
-    Id: 1a03ecef-c087-4a2a-abff-e045650a1f69
+    Id: 2639c960-a6a7-4089-abe3-961c9d99fb9e
     IsCompressed: true
   LastModified: 0001-01-01T00:00:00.0000000
   ModelInfo:
-    Id: e89b3ed5-b461-4724-b5ca-563065e96b3c
+    Id: 5cdded54-098d-4453-b48e-80d7672d09fd
     AnimationTracks: []
     EmbeddedResources: null
     Materials:
       - Item1: fan material
-        Item2: 00000000-0000-0000-0000-000000000000
+        Item2: cfaad517-014e-462f-b0d0-edf6ce614224
     Nodes:
       - RootNode
       - RootNode.eletric fan

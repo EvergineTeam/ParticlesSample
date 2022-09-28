@@ -1,17 +1,19 @@
 !Evergine.Assets.Exporters.MaterialMetaFile,Evergine.Assets
-Id: accd23cd-1b14-41d7-89e8-402f244dae68
+Id: c3cb6c48-a5c0-466f-a790-3cb383e5b8b6
 DefaultProfile:
   ExcludeAsset: false
   Name: null
   Platform: Undefined
 ExportAsRaw: false
 MaterialInfo:
-  Id: fa1cbade-96b3-4862-8272-517401f9d7ea
+  Id: 0761e899-9dc5-4afd-bbb0-8035621ce800
   ActiveDirectives:
     - AO
     - DIFF
     - IBL
     - LIT
+    - MT_RG_TEXTURED
+    - NORMAL
   AllowInstancing: false
   EffectID: daa1f60a-82ad-40fc-8fbb-7b85caa6de0a
   Layer: 0db59561-b3f5-444f-b5de-e62e3a5b42bf
@@ -19,37 +21,37 @@ MaterialInfo:
   Parameters:
     - Name: World
       Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
-      ValueByteArray: n/7bPlh1MjNnBba+AAAAAEk5LL2EJ/A+MidQvQAAAAAEBak+kiKVPdxHzD4AAAAAAgCAQDAusj8tVlDAAACAPw==
+      ValueByteArray: AAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACAPw==
     - Name: ForwardLightMask
       Type: Evergine.Mathematics.UInt2,Evergine.Mathematics
-      ValueByteArray: /A8AAAAAAAA=
+      ValueByteArray: AwAAAAAAAAA=
     - Name: ViewProj
       Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
-      ValueByteArray: r1KqP4Gq3ry6JmC95yJgvSb2x7jHTBdAx6hPvjylT74ofJi9lUP6vnNOer8uSnq/INwjwTxCOsA83glASEIQQA==
+      ValueByteArray: X053v8XA1T5axGE/kr5hP4DqjDInnxdABxRFvvsORb7ZQf0/7rpQPj923D6acNw+WTQ1sksp8jQf7ItAvRuPQA==
     - Name: EyePosition
       Type: Evergine.Mathematics.Vector3,Evergine.Mathematics
-      ValueByteArray: ngf5QN+H0T/048M/
+      ValueByteArray: 2GN8wGxRXD+Udfa/
     - Name: EyeCount
       Type: System.Int32
       ValueByteArray: AQAAAA==
     - Name: EV100
       Type: System.Single
-      ValueByteArray: HRDcvw==
+      ValueByteArray: AAAAAA==
     - Name: Exposure
       Type: System.Single
-      ValueByteArray: aZsvQA==
+      ValueByteArray: AACAPw==
     - Name: IblMaxMipLevel
       Type: System.UInt32
       ValueByteArray: BQAAAA==
     - Name: IblLuminance
       Type: System.Single
-      ValueByteArray: aZsvQA==
+      ValueByteArray: AACAPw==
     - Name: MultiviewViewProj
       Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
-      ValueByteArray: r1KqP4Gq3ry6JmC95yJgvSb2x7jHTBdAx6hPvjylT74ofJi9lUP6vnNOer8uSnq/INwjwTxCOsA83glASEIQQA==
+      ValueByteArray: X053v8XA1T5axGE/kr5hP4DqjDInnxdABxRFvvsORb7ZQf0/7rpQPj923D6acNw+WTQ1sksp8jQf7ItAvRuPQA==
     - Name: MultiviewEyePosition
       Type: Evergine.Mathematics.Vector4,Evergine.Mathematics
-      ValueByteArray: ngf5QN+H0T/048M/AACAPw==
+      ValueByteArray: 2GN8wGxRXD+Udfa/AACAPw==
     - Name: BaseColor
       Type: Evergine.Mathematics.Vector3,Evergine.Mathematics
       ValueByteArray: zcxMP83MTD/NzEw/
@@ -58,10 +60,10 @@ MaterialInfo:
       ValueByteArray: AACAPw==
     - Name: Metallic
       Type: System.Single
-      ValueByteArray: mpmZPg==
+      ValueByteArray: zczMPg==
     - Name: Roughness
       Type: System.Single
-      ValueByteArray: zczMPQ==
+      ValueByteArray: SFmLPg==
     - Name: Reflectance
       Type: System.Single
       ValueByteArray: AACAPw==
@@ -92,6 +94,9 @@ MaterialInfo:
     - Name: IrradianceSH
       Type: Evergine.Mathematics.Vector4,Evergine.Mathematics
       ValueByteArray: QAAAACUAAABaAAADAGAQAA==
+    - Name: ShadowViewProjectionArray
+      Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
+      ValueByteArray: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
   Samplers:
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
@@ -107,8 +112,14 @@ MaterialInfo:
       Name: null
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
-    - ID: 7d1e2792-2031-42bb-a67c-0dbd282be12a
-      Name: IblDFGSampler
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
     - ID: 00000000-0000-0000-0000-000000000000
@@ -116,10 +127,10 @@ MaterialInfo:
   Textures:
     - ID: 799e712d-b12a-4fd4-b9d1-a4750b36ab65
       Name: BaseColorTexture
-    - ID: 00000000-0000-0000-0000-000000000000
-      Name: null
-    - ID: 00000000-0000-0000-0000-000000000000
-      Name: null
+    - ID: 08fee270-8581-46cc-8e47-921b4cfe63b2
+      Name: NormalTexture
+    - ID: cd55f037-90df-434f-acbb-5815b09ef4cd
+      Name: MetallicRoughnessTexture
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
     - ID: cd55f037-90df-434f-acbb-5815b09ef4cd
@@ -128,10 +139,16 @@ MaterialInfo:
       Name: null
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
-    - ID: d81d459c-c433-4ee3-bfe5-b45fbce12736
-      Name: IblDFGTexture
-    - ID: be0298b4-6f5e-448d-a3ad-5d9fd7a05a46
-      Name: IBLRadianceTexture
-    - ID: 278d88e2-6db2-4dfc-830f-da4ccf5bfb31
-      Name: IBLIrradianceTexture
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
 Profiles: {}

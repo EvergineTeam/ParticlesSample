@@ -9,6 +9,7 @@ namespace ParticlesSample
     {
         public MyApplication()
         {
+            this.Container.RegisterType<Settings>();
             this.Container.RegisterType<Clock>();
             this.Container.RegisterType<TimerFactory>();
             this.Container.RegisterType<Random>();
@@ -18,6 +19,7 @@ namespace ParticlesSample
             this.Container.RegisterType<AssetsDirectory>();
             this.Container.RegisterType<AssetsService>();
             this.Container.RegisterType<ForegroundTaskSchedulerService>();
+            this.Container.RegisterType<WorkActionScheduler>();
         }
 
         public override void Initialize()

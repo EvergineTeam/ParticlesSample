@@ -1,5 +1,5 @@
 !Evergine.Assets.Exporters.ModelMetaFile,Evergine.Assets
-Id: c261b249-a31f-4cfb-97c8-63ae4e56a86c
+Id: d4cf496a-631b-4724-818d-6f9fab5b953c
 Clips: []
 DefaultProfile:
   ExcludeAsset: false
@@ -11,16 +11,16 @@ GenerateTangentSpace: true
 Profiles: {}
 Source:
   Header:
-    Id: cc0df6e4-9002-4279-bc4a-a3aef4ab40b2
+    Id: 484ee4d4-df6a-49be-a898-fd9a9e32718a
     IsCompressed: true
   LastModified: 0001-01-01T00:00:00.0000000
   ModelInfo:
-    Id: aca31f93-d8fd-4d3f-9745-9f9705372910
+    Id: b7779217-dda0-4423-8e91-783c0d9952b0
     AnimationTracks: []
     EmbeddedResources: null
     Materials:
       - Item1: Stone_low_1
-        Item2: 392d096a-166f-4f8e-852c-f857d6ea0c8c
+        Item2: 86a5bb61-7693-4fa8-a6a1-765775b4efb0
     Nodes:
       - RootNode
       - LeopardStone

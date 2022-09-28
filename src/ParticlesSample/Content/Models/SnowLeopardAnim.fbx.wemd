@@ -1,5 +1,5 @@
 !Evergine.Assets.Exporters.ModelMetaFile,Evergine.Assets
-Id: 5a0c4f26-4860-4047-a0cd-aa9602627678
+Id: 9fc87ff0-f7f7-49f2-b2d8-72b26a0b0c4d
 Clips:
   - AdditiveReferenceFrame: 0
     AdditiveReferenceSourceTrack: null
@@ -33,11 +33,11 @@ GenerateTangentSpace: true
 Profiles: {}
 Source:
   Header:
-    Id: 224e8434-4700-4938-8f67-88b04260c098
+    Id: 7e9e444c-1e25-4bc9-b1ea-60da04cd24e2
     IsCompressed: true
   LastModified: 0001-01-01T00:00:00.0000000
   ModelInfo:
-    Id: 879950fb-b59e-4ddc-a588-0aa9a3e4ac50
+    Id: db91822f-1936-48ee-95c2-17d683773d0a
     AnimationTracks:
       - AdditiveReferenceFrame: 0
         AdditiveReferenceSourceTrack: null
@@ -64,9 +64,9 @@ Source:
     EmbeddedResources: null
     Materials:
       - Item1: 'Material #2'
-        Item2: 558d33cf-3060-4444-9619-b097245f0f27
+        Item2: ed0600de-96b5-4bc2-b57a-93c5343f534f
       - Item1: DefaultMaterial
-        Item2: 6a932d78-d8a6-4329-a424-0e1d98d3ed42
+        Item2: e0cdb602-559d-4777-bebe-35347871bb53
     Nodes:
       - RootNode
       - RootNode.Helper001

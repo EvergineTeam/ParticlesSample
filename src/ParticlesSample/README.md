@@ -24,10 +24,10 @@ TODO: Explain how other users and developers can contribute to make your code be
 If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops).
 
 ----
-Powered by **[WaveEngine 3.1](http://www.waveengine.net)**
+Powered by **[Evergine](http://www.evergine.com)**
 
 LET'S CONNECT!
 
-- [Youtube](https://www.youtube.com/subscription_center?add_user=WaveEngineChannel)
-- [Twitter](https://twitter.com/WaveEngineTeam)
-- [Blog](http://geeks.ms/waveengineteam/)
+- [Youtube](https://www.youtube.com/subscription_center?add_user=EvergineChannel)
+- [Twitter](https://twitter.com/EvergineTeam)
+- [Blog](http://geeks.ms/evergineteam/)

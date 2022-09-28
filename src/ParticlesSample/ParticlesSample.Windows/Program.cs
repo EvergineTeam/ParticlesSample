@@ -1,21 +1,52 @@
-using System.Diagnostics;
 using Evergine.Common.Graphics;
+using Evergine.Common.Helpers;
 using Evergine.Framework;
 using Evergine.Framework.Graphics;
 using Evergine.Framework.Services;
+using Evergine.Platform;
+using System;
+using System.Diagnostics;
 
 namespace ParticlesSample.Windows
 {
     class Program
     {
+        static uint width = 1280;
+        static uint height = 720;
+        static bool Windowed = true;
+        static bool VSync = true;
+        
         static void Main(string[] args)
         {
+            // Commandline parser
+            if (args.Length > 0)
+            {
+                CmdParser cmd = new CmdParser()
+                    .AddOption(new CmdParser.Option("-Width", (string v) => { return uint.TryParse(v, out width); }, "Set width size in pixels."))
+                    .AddOption(new CmdParser.Option("-Height", (string v) => { return uint.TryParse(v, out height); }, "Set height size in pixels."))
+                    .AddOption(new CmdParser.Option("-Vsync", (string _) => { VSync = true; return true; }, "Active vertical sync."))
+                    .AddOption(new CmdParser.Option("-NoVsync", (string _) => { VSync = false; return true; }, "Desactive vertical sync."))
+                    .AddOption(new CmdParser.Option("-Windowed", (string _) => { Windowed = true; return true; }, "Set application to run in windowed mode."))
+                    .AddOption(new CmdParser.Option("-FullScreen", (string _) => { Windowed = false; return true; }, "Set application to run in fullscreen mode."));
+
+                var success = cmd.Parse(args);
+
+                if (!success)
+                {
+                    Console.Write(cmd.ErrorMessage);
+                    return;
+                }
+            }
+            else
+            {
+                var handle = Win32API.GetConsoleWindow();
+                Win32API.ShowWindow(handle, 0);
+            }
+
             // Create app
             MyApplication application = new MyApplication();
 
             // Create Services
-            uint width = 1280;
-            uint height = 720;
             WindowsSystem windowsSystem = new Evergine.Forms.FormsWindowsSystem();
             application.Container.RegisterInstance(windowsSystem);
             var window = windowsSystem.CreateWindow("ParticlesSample - DX11", width, height);
@@ -23,7 +54,7 @@ namespace ParticlesSample.Windows
             ConfigureGraphicsContext(application, window);
 			
 			// Creates XAudio device
-            var xaudio = new Evergine.XAudio2.XAudioDevice();
+            var xaudio = new global::Evergine.XAudio2.XAudioDevice();
             application.Container.RegisterInstance(xaudio);
 
             Stopwatch clockTimer = Stopwatch.StartNew();
@@ -44,7 +75,7 @@ namespace ParticlesSample.Windows
 
         private static void ConfigureGraphicsContext(Application application, Window window)
         {
-            GraphicsContext graphicsContext = new Evergine.DirectX11.DX11GraphicsContext();
+            GraphicsContext graphicsContext = new global::Evergine.DirectX11.DX11GraphicsContext();
             graphicsContext.CreateDevice();
             SwapChainDescription swapChainDescription = new SwapChainDescription()
             {
@@ -56,11 +87,11 @@ namespace ParticlesSample.Windows
                 DepthStencilTargetFormat = PixelFormat.D24_UNorm_S8_UInt,
                 DepthStencilTargetFlags = TextureFlags.DepthStencil,
                 SampleCount = TextureSampleCount.None,
-                IsWindowed = true,
+                IsWindowed = Windowed,
                 RefreshRate = 60
             };
             var swapChain = graphicsContext.CreateSwapChain(swapChainDescription);
-            swapChain.VerticalSync = true;
+            swapChain.VerticalSync = VSync;
 
             var graphicsPresenter = application.Container.Resolve<GraphicsPresenter>();
             var firstDisplay = new Display(window, swapChain);

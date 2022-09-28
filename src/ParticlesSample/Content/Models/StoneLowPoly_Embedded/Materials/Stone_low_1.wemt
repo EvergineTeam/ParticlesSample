@@ -1,12 +1,12 @@
 !Evergine.Assets.Exporters.MaterialMetaFile,Evergine.Assets
-Id: 392d096a-166f-4f8e-852c-f857d6ea0c8c
+Id: 86a5bb61-7693-4fa8-a6a1-765775b4efb0
 DefaultProfile:
   ExcludeAsset: false
   Name: null
   Platform: Undefined
 ExportAsRaw: false
 MaterialInfo:
-  Id: feab472f-7375-4e87-b8dd-58e33f78190a
+  Id: 725ed0fc-7db5-43fa-90d0-7334a887a554
   ActiveDirectives:
     - IBL
     - LIT
@@ -17,37 +17,37 @@ MaterialInfo:
   Parameters:
     - Name: World
       Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
-      ValueByteArray: AAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACAPw==
+      ValueByteArray: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
     - Name: ForwardLightMask
       Type: Evergine.Mathematics.UInt2,Evergine.Mathematics
-      ValueByteArray: AwAAAAAAAAA=
+      ValueByteArray: AAAAAAAAAAA=
     - Name: ViewProj
       Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
-      ValueByteArray: dV8KQAAAAAAAAAAAAAAAAAAAAACZigpAF7Tivkmu4r4AAAAAYNCIv96QZb/9imW/AAAAAHmCGjUe7ItAvBuPQA==
+      ValueByteArray: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
     - Name: EyePosition
       Type: Evergine.Mathematics.Vector3,Evergine.Mathematics
-      ValueByteArray: AAAAANJv/T+CUYBA
+      ValueByteArray: AAAAAAAAAAAAAAAA
     - Name: EyeCount
       Type: System.Int32
-      ValueByteArray: AQAAAA==
+      ValueByteArray: AAAAAA==
     - Name: EV100
       Type: System.Single
       ValueByteArray: AAAAAA==
     - Name: Exposure
       Type: System.Single
-      ValueByteArray: AACAPw==
+      ValueByteArray: AAAAAA==
     - Name: IblMaxMipLevel
       Type: System.UInt32
-      ValueByteArray: BQAAAA==
+      ValueByteArray: AAAAAA==
     - Name: IblLuminance
       Type: System.Single
-      ValueByteArray: AACAPw==
+      ValueByteArray: AAAAAA==
     - Name: MultiviewViewProj
       Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
-      ValueByteArray: dV8KQAAAAAAAAAAAAAAAAAAAAACZigpAF7Tivkmu4r4AAAAAYNCIv96QZb/9imW/AAAAAHmCGjUe7ItAvBuPQA==
+      ValueByteArray: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
     - Name: MultiviewEyePosition
       Type: Evergine.Mathematics.Vector4,Evergine.Mathematics
-      ValueByteArray: AAAAANJv/T+CUYBAAACAPw==
+      ValueByteArray: AAAAAAAAAAAAAAAAAAAAAA==
     - Name: BaseColor
       Type: Evergine.Mathematics.Vector3,Evergine.Mathematics
       ValueByteArray: AACAPwAAgD8AAIA/
@@ -59,7 +59,7 @@ MaterialInfo:
       ValueByteArray: zcxMPw==
     - Name: Roughness
       Type: System.Single
-      ValueByteArray: zczMPg==
+      ValueByteArray: mpkZPg==
     - Name: Reflectance
       Type: System.Single
       ValueByteArray: AAAAPw==
@@ -89,7 +89,10 @@ MaterialInfo:
       ValueByteArray: AAAAAA==
     - Name: IrradianceSH
       Type: Evergine.Mathematics.Vector4,Evergine.Mathematics
-      ValueByteArray: QAAAACUAAABaAAADAGAQAA==
+      ValueByteArray: AAAAAAAAAAAAAAAAAAAAAA==
+    - Name: ShadowViewProjectionArray
+      Type: Evergine.Mathematics.Matrix4x4,Evergine.Mathematics
+      ValueByteArray: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
   Samplers:
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
@@ -111,6 +114,12 @@ MaterialInfo:
       Name: null
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
   Textures:
     - ID: 00000000-0000-0000-0000-000000000000
       Name: null
@@ -128,8 +137,14 @@ MaterialInfo:
       Name: null
     - ID: d81d459c-c433-4ee3-bfe5-b45fbce12736
       Name: IblDFGTexture
-    - ID: 3679e4dd-30f3-4148-b37d-bdaafd6a7255
-      Name: IBLRadianceTexture
-    - ID: 19afa87b-4257-40e0-9e66-1aa3fed7de91
-      Name: IBLIrradianceTexture
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
+    - ID: 00000000-0000-0000-0000-000000000000
+      Name: null
 Profiles: {}
