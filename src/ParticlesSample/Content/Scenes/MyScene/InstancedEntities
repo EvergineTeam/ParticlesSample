@@ -35,7 +35,6 @@ Items:
       - !Evergine.Framework.Graphics.Camera3D,Evergine.Framework
         Id: 5b10653e-93d2-48e7-884f-a07b2ac173ee
         Aperture: 1.0
-        AspectRatio: 1.96727276
         AutoDepthBounds: false
         AutoExposureEnabled: false
         CameraOrder: 0.0
@@ -43,9 +42,6 @@ Items:
         ClearFlags: All
         ClearStencil: 0
         Compensation: 0.0
-        DepthRange:
-          MaxDepth: 1.0
-          MinDepth: 0.0
         DisplayTag: null
         Exposure: 1.0
         FarPlane: 1000.0
@@ -66,13 +62,6 @@ Items:
         LogLuminanceRange: 12.0
         MinLogLuminance: -10.0
         NearPlane: 0.100000001
-        ScreenViewport:
-          Height: 275.0
-          MaxDepth: 1.0
-          MinDepth: 0.0
-          Width: 541.0
-          X: 0.0
-          Y: 0.0
         Sensitivity: 100.0
         SensorSize:
           X: 36.0
@@ -80,10 +69,6 @@ Items:
         ShutterSpeed: 1.20000005
         TAU: 1.10000002
         TagFilter: null
-        UpVector:
-          X: 0.0
-          Y: 1.0
-          Z: 0.0
         UsePhysicalParameters: false
     Children: []
     Id: 9841b6b3-9c09-4b60-b442-a5c63257ee02
@@ -171,7 +156,7 @@ Items:
         LayerOrder: 10
         OrderBias: 0
         RenderFlags: CastShadows
-        ppGraph: dd593717-0922-4f58-9c85-c309658eff03
+        ppGraph: bef96f96-936f-4828-8981-0905e2b2cb0c
       - !Evergine.Framework.Physics3D.BoxCollider3D,Evergine.Framework
         Id: 660905fe-beb5-43ed-ba74-d79a0c4f8fc0
         IsEnabled: true
@@ -470,8 +455,8 @@ Items:
                     Diameter: 0.0500000007
                     IsEnabled: true
                     Tessellation: 14
-                    UVHorizontalFlip: false
-                    UVVerticalFlip: false
+                    UMirror: false
+                    VMirror: false
                   - !Evergine.Components.Graphics3D.MeshRenderer,Evergine.Framework
                     Id: cb6e9fd8-22ac-4eaf-a7ff-527e4362717f
                     DebugBoundingbox: true
@@ -707,8 +692,8 @@ Items:
                     Diameter: 0.0299999993
                     IsEnabled: true
                     Tessellation: 16
-                    UVHorizontalFlip: false
-                    UVVerticalFlip: false
+                    UMirror: false
+                    VMirror: false
                   - !Evergine.Components.Graphics3D.MeshRenderer,Evergine.Framework
                     Id: 847c28dc-c02b-4c64-bc10-c79e9e3b7f0a
                     DebugBoundingbox: true
@@ -6590,24 +6575,24 @@ Items:
             OldType: '!Evergine.Framework.Particles.ParticleSystem,Evergine.Framework'
             Properties:
               ColorAnimated: true
-              ColorOverLife1: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              ColorOverLife1: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 A: 0
                 B: 0
                 G: 0
                 R: 0
-              ColorOverLife2: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              ColorOverLife2: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 A: 255
                 B: 255
                 G: 255
                 R: 255
               ColorOverLife2Position: 0.20000000300000001
-              ColorOverLife3: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              ColorOverLife3: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 A: 255
                 B: 255
                 G: 255
                 R: 255
               ColorOverLife3Position: 0.70753866399999998
-              ColorOverLife4: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              ColorOverLife4: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 A: 0
                 B: 0
                 G: 0
@@ -6624,12 +6609,12 @@ Items:
               InitAngularVelocity: 0.0
               InitAngularVelocity2: 0.0
               InitAngularVelocityMode: Constant
-              InitColor: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              InitColor: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 A: 255
                 B: 255
                 G: 255
                 R: 255
-              InitColor2: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              InitColor2: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 A: 255
                 B: 221
                 G: 0
@@ -6650,7 +6635,7 @@ Items:
               NoiseEnabled: false
               NoiseFrequency: 0.20000000300000001
               NoiseSize: 10.0
-              NoiseSpeed: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              NoiseSpeed: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 X: 1.0
                 Y: 1.0
                 Z: 1.0
@@ -6690,11 +6675,11 @@ Items:
               Id: c8690e26-a1ea-4660-8572-3c6e2362025e
               IsEnabled: true
               Randomize: 0.20000000300000001
-              Size: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              Size: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 X: 1.0
                 Y: 0.10000000100000001
                 Z: 1.0
-              VelocityOffset: !System.Collections.Generic.Dictionary%25602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
+              VelocityOffset: !System.Collections.Generic.Dictionary%602[[System.String,System.Private.CoreLib],[System.Object,System.Private.CoreLib]],System.Private.CoreLib
                 X: 0.0
                 Y: 0.0
                 Z: 0.0
