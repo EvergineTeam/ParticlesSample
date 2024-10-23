@@ -126,57 +126,6 @@ Items:
     Children: []
     Id: c9365fad-8129-41af-9d55-2d810d6a1514
   - !Evergine.Framework.Assets.AssetSources.Entities.EntityItemModel,Evergine.Framework
-    Name: postProcesingVolume
-    Tag: null
-    IsEnabled: true
-    IsStatic: false
-    Components:
-      - !Evergine.Framework.Graphics.Transform3D,Evergine.Framework
-        Id: 582f76c2-f2fb-48ac-97c7-2c138a5be2bf
-        IsEnabled: true
-        LocalOrientation:
-          W: 1.0
-          X: 0.0
-          Y: 0.0
-          Z: 0.0
-        LocalPosition:
-          X: -0.254395902
-          Y: -0.422412962
-          Z: -1.71255326
-        LocalScale:
-          X: 1.0
-          Y: 1.0
-          Z: 1.0
-      - !Evergine.Components.Graphics3D.PostProcessingGraphRenderer,Evergine.Components
-        Id: 561892a5-b450-479c-b8dd-e2a2c6e8c408
-        DebugBoundingbox: true
-        IsCullingEnabled: true
-        IsEnabled: true
-        IsGlobal: true
-        LayerOrder: 10
-        OrderBias: 0
-        RenderFlags: CastShadows
-        ppGraph: bef96f96-936f-4828-8981-0905e2b2cb0c
-      - !Evergine.Framework.Physics3D.BoxCollider3D,Evergine.Framework
-        Id: 660905fe-beb5-43ed-ba74-d79a0c4f8fc0
-        IsEnabled: true
-        Margin: 0.0399999991
-        Offset:
-          X: 0.0
-          Y: 0.0
-          Z: 0.0
-        OrientationOffset:
-          W: 1.0
-          X: 0.0
-          Y: 0.0
-          Z: 0.0
-        Size:
-          X: 1.0
-          Y: 1.0
-          Z: 1.0
-    Children: []
-    Id: 43a9ff84-6b19-4097-b00b-8f4f5d9afbad
-  - !Evergine.Framework.Assets.AssetSources.Entities.EntityItemModel,Evergine.Framework
     Name: solarField
     Tag: null
     IsEnabled: true
@@ -801,6 +750,7 @@ Items:
             Model: 9fc87ff0-f7f7-49f2-b2d8-72b26a0b0c4d
             PlayAutomatically: true
             PlaybackRate: 1.0
+            SmoothTransitions: false
             UpdateOrder: 0.5
         Children:
           - !Evergine.Framework.Assets.AssetSources.Entities.EntityItemModel,Evergine.Framework
@@ -2820,6 +2770,7 @@ Items:
                 RenderFlags: CastShadows
                 RootJointId: 97116e01-496b-46ce-9500-af4c44645142
                 UseComputeSkinning: true
+                VelocityEnabled: true
             Children: []
             Id: 762698ef-637a-48ae-a193-979fc62e30e9
           - !Evergine.Framework.Assets.AssetSources.Entities.EntityItemModel,Evergine.Framework
@@ -7062,6 +7013,57 @@ Items:
             Id: a8182821-3415-4fee-baa3-ea6bdaf7527e
         Id: 75a9ed75-45a8-4cb6-ae05-df1b380d54ba
     Id: 071bc1dc-70d8-431d-a1e5-f7edd6e780ca
+  - !Evergine.Framework.Assets.AssetSources.Entities.EntityItemModel,Evergine.Framework
+    Name: postProcessingVolume
+    Tag: null
+    IsEnabled: true
+    IsStatic: false
+    Components:
+      - !Evergine.Framework.Graphics.Transform3D,Evergine.Framework
+        Id: ac5484c9-6c85-4bf4-8afc-d18e98b5fbcb
+        IsEnabled: true
+        LocalOrientation:
+          W: 1.0
+          X: 0.0
+          Y: 0.0
+          Z: 0.0
+        LocalPosition:
+          X: 1.37014937
+          Y: -0.278901339
+          Z: -7.431633
+        LocalScale:
+          X: 1.0
+          Y: 1.0
+          Z: 1.0
+      - !Evergine.Components.Graphics3D.PostProcessingGraphRenderer,Evergine.Components
+        Id: 7dbf65d8-93af-46bf-88d2-573a20e67dee
+        DebugBoundingbox: true
+        IsCullingEnabled: true
+        IsEnabled: true
+        IsGlobal: true
+        LayerOrder: 10
+        OrderBias: 0
+        RenderFlags: CastShadows
+        ppGraph: dd593717-0922-4f58-9c85-c309658eff03
+      - !Evergine.Framework.Physics3D.BoxCollider3D,Evergine.Framework
+        Id: 30625af9-8b5c-48f1-9344-feb7205e7a08
+        IsEnabled: true
+        Margin: 0.0399999991
+        Offset:
+          X: 0.0
+          Y: 0.0
+          Z: 0.0
+        OrientationOffset:
+          W: 1.0
+          X: 0.0
+          Y: 0.0
+          Z: 0.0
+        Size:
+          X: 1.0
+          Y: 1.0
+          Z: 1.0
+    Children: []
+    Id: bda1194d-5ab1-4582-a64c-7c5833a40e71
 Managers:
   - !Evergine.Framework.Managers.AssetSceneManager,Evergine.Framework
     Id: 4ae9964a-5a8a-463f-b714-050389b3b68c
@@ -7090,4 +7092,3 @@ Managers:
     PunctualResolution: Size_512
     ShadowFilter: PCF3x3
     SpotResolution: Size_512
-
