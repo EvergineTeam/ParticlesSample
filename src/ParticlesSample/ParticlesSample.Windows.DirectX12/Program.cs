@@ -6,7 +6,7 @@ using Evergine.Framework.Services;
 using System;
 using System.Diagnostics;
 
-namespace ParticlesSample.Windows
+namespace ParticlesSample.Windows.DirectX12
 {
     class Program
     {
@@ -14,7 +14,7 @@ namespace ParticlesSample.Windows
         static uint height = 720;
         static bool Windowed = true;
         static bool VSync = true;
-        
+
         static void Main(string[] args)
         {
             // Commandline parser
@@ -46,12 +46,12 @@ namespace ParticlesSample.Windows
             MyApplication application = new MyApplication();
 
             // Create Services
-            WindowsSystem windowsSystem = new Evergine.Forms.FormsWindowsSystem();
+            WindowsSystem windowsSystem = new global::Evergine.Forms.FormsWindowsSystem();
             application.Container.RegisterInstance(windowsSystem);
-            var window = windowsSystem.CreateWindow("ParticlesSample - DX11", width, height);
+            var window = windowsSystem.CreateWindow("ParticlesSample - DX12", width, height);
 
             ConfigureGraphicsContext(application, window);
-			
+
 			// Creates XAudio device
             var xaudio = new global::Evergine.XAudio2.XAudioDevice();
             application.Container.RegisterInstance(xaudio);
@@ -70,11 +70,13 @@ namespace ParticlesSample.Windows
                 application.UpdateFrame(gameTime);
                 application.DrawFrame(gameTime);
             });
+
+            application.Dispose();
         }
 
         private static void ConfigureGraphicsContext(Application application, Window window)
         {
-            GraphicsContext graphicsContext = new global::Evergine.DirectX11.DX11GraphicsContext();
+            GraphicsContext graphicsContext = new global::Evergine.DirectX12.DX12GraphicsContext();
             graphicsContext.CreateDevice();
             SwapChainDescription swapChainDescription = new SwapChainDescription()
             {
