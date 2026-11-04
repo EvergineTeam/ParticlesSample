@@ -366,7 +366,6 @@ Items:
                       G: 0.253855526
                       R: 1.0
                     LuminousPower: 30.0
-                    ShadowBias: 0.00400000019
                     ShadowOpacity: 1.0
                     Temperature: 2000.0
                 Children: []
@@ -603,7 +602,6 @@ Items:
                       G: 0.457798362
                       R: 1.0
                     LuminousPower: 20.0
-                    ShadowBias: 0.00400000019
                     ShadowOpacity: 1.0
                     Temperature: 3000.0
                 Children: []
@@ -3327,7 +3325,6 @@ Items:
                                                                               G: 0.0717614517
                                                                               R: 0.000638182799
                                                                             LuminousPower: 1.0
-                                                                            ShadowBias: 0.00400000019
                                                                             ShadowOpacity: 1.0
                                                                             Temperature: 500000.0
                                                                         Children: []
@@ -3901,7 +3898,6 @@ Items:
                                                                               G: 0.219519734
                                                                               R: 0.0
                                                                             LuminousPower: 1.0
-                                                                            ShadowBias: 0.00400000019
                                                                             ShadowOpacity: 1.0
                                                                             Temperature: 500000.0
                                                                         Children: []
@@ -4427,7 +4423,6 @@ Items:
                                                                               G: 0.219519734
                                                                               R: 0.0
                                                                             LuminousPower: 1.0
-                                                                            ShadowBias: 0.00400000019
                                                                             ShadowOpacity: 1.0
                                                                             Temperature: 500000.0
                                                                         Children: []
@@ -4651,7 +4646,6 @@ Items:
                                       G: 0.197516426
                                       R: 0.0581871793
                                     LuminousPower: 10.0
-                                    ShadowBias: 0.00400000019
                                     ShadowOpacity: 1.0
                                     Temperature: 500000.0
                                 Children: []
@@ -5390,7 +5384,6 @@ Items:
                                                   G: 0.219519734
                                                   R: 0.0
                                                 LuminousPower: 1.0
-                                                ShadowBias: 0.00400000019
                                                 ShadowOpacity: 1.0
                                                 Temperature: 500000.0
                                             Children: []
@@ -5820,7 +5813,6 @@ Items:
                                                   G: 0.219519734
                                                   R: 0.0
                                                 LuminousPower: 1.0
-                                                ShadowBias: 0.00400000019
                                                 ShadowOpacity: 1.0
                                                 Temperature: 500000.0
                                             Children: []
@@ -5916,7 +5908,6 @@ Items:
                   G: 0.219519734
                   R: 0.0
                 LuminousPower: 10.0
-                ShadowBias: 0.00400000019
                 ShadowOpacity: 1.0
                 Temperature: 500000.0
             Children: []
@@ -6003,7 +5994,6 @@ Items:
               G: 0.197516426
               R: 0.0581871793
             LuminousPower: 100.0
-            ShadowBias: 0.00400000019
             ShadowOpacity: 1.0
             Temperature: 500000.0
         Children: []
@@ -6170,7 +6160,6 @@ Items:
                           R: 0.219519734
                         LuminousPower: 0.5
                         Radius: 0.100000001
-                        ShadowBias: 0.00400000019
                         ShadowOpacity: 1.0
                         Temperature: 3000.0
                     Children: []
@@ -6218,7 +6207,6 @@ Items:
                           R: 0.219519734
                         LuminousPower: 0.5
                         Radius: 0.100000001
-                        ShadowBias: 0.00400000019
                         ShadowOpacity: 1.0
                         Temperature: 3000.0
                     Children: []
@@ -6349,7 +6337,6 @@ Items:
               G: 1.0
               R: 0.219519734
             LuminousPower: 12.566371
-            ShadowBias: 0.00400000019
             ShadowOpacity: 1.0
             Temperature: 4000.0
         Children: []
@@ -6459,7 +6446,6 @@ Items:
               G: 0.943362474
               R: 1.0
             LuminousPower: 15.0
-            ShadowBias: 0.00400000019
             ShadowOpacity: 1.0
             Temperature: 6500.0
         Children: []
@@ -6709,7 +6695,6 @@ Items:
               G: 0.223310426
               R: 0.560499191
             LuminousPower: 50.0
-            ShadowBias: 0.00400000019
             ShadowOpacity: 1.0
             Temperature: 6500.0
         Children: []
@@ -6819,7 +6804,6 @@ Items:
               G: 1.0
               R: 0.212044388
             LuminousPower: 19.8100319
-            ShadowBias: 0.00400000019
             ShadowOpacity: 1.0
             Temperature: 4000.0
         Children: []
@@ -7045,23 +7029,23 @@ Items:
         OrderBias: 0
         RenderFlags: CastShadows
         ppGraph: dd593717-0922-4f58-9c85-c309658eff03
-      - !Evergine.Framework.Physics3D.BoxCollider3D,Evergine.Framework
+      - !Evergine.Framework.Physics.BoxCollider,Evergine.Framework
         Id: 30625af9-8b5c-48f1-9344-feb7205e7a08
         IsEnabled: true
-        Margin: 0.0399999991
         Offset:
           X: 0.0
           Y: 0.0
           Z: 0.0
-        OrientationOffset:
-          W: 1.0
-          X: 0.0
-          Y: 0.0
-          Z: 0.0
+        RotationOffset:
+          X: 0
+          Y: 0
+          Z: 0
         Size:
           X: 1.0
           Y: 1.0
           Z: 1.0
+        UseModelBounds: true
+        ConvexRadius: 0.0399999991
     Children: []
     Id: bda1194d-5ab1-4582-a64c-7c5833a40e71
 Managers:
