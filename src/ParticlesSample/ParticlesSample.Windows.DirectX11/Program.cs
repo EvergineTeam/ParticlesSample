@@ -6,7 +6,7 @@ using Evergine.Framework.Services;
 using System;
 using System.Diagnostics;
 
-namespace ParticlesSample.Windows.DirectX12
+namespace ParticlesSample.Windows.DirectX11
 {
     class Program
     {
@@ -48,7 +48,7 @@ namespace ParticlesSample.Windows.DirectX12
             // Create Services
             WindowsSystem windowsSystem = new global::Evergine.Forms.FormsWindowsSystem();
             application.Container.RegisterInstance(windowsSystem);
-            var window = windowsSystem.CreateWindow("ParticlesSample - DX12", width, height);
+            var window = windowsSystem.CreateWindow("ParticlesSample - DX11", width, height);
 
             ConfigureGraphicsContext(application, window);
 
@@ -76,7 +76,7 @@ namespace ParticlesSample.Windows.DirectX12
 
         private static void ConfigureGraphicsContext(Application application, Window window)
         {
-            GraphicsContext graphicsContext = new global::Evergine.DirectX12.DX12GraphicsContext();
+            GraphicsContext graphicsContext = new global::Evergine.DirectX11.DX11GraphicsContext();
             graphicsContext.CreateDevice();
             SwapChainDescription swapChainDescription = new SwapChainDescription()
             {
